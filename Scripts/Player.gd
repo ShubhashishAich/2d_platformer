@@ -72,7 +72,10 @@ func _physics_process(delta):
 		if direction:
 			velocity.x = 200 * direction
 		else:
-			velocity.x = 200
+			if $AnimatedSprite2D.flip_h == true:
+				velocity.x = -200
+			else:
+				velocity.x = 200
 	
 	move_and_slide()
 	
